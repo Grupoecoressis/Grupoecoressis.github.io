@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo Ecoresistol - General </title>
+  <link rel="icon" href="icono.png" type="image/png">
+  <style>
+    :root {
+      --amarillo: #fff500;
+      --azul-oscuro: #1e30c9;
+      --rojo: #d92a0b;
+      --negro: #091316;
+      --celeste: #3d9af1;
+      --azul-med: #3466dc;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      padding: 20px;
+       background: linear-gradient(to bottom, #c8d4f5, #ffffff);
+      
+    }
+    .producto-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  background-color: --celeste;
+  color: #091316;
+ 
+}
+
+.producto-imagenes {
+  
+  min-width: 300px;
+}
+
+.imagen-principal {
+    height: 500px;
+   
+  border: 2px solid #d92a0b;
+  border-radius: 8px;
+}
+
+.miniaturas {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.miniaturas img {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #1e30c9;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.producto-detalles {
+  flex:2;
+  min-width: 300px;
+}
+
+.producto-detalles h1 {
+  font-size: 24px;
+  color: #1e30c9;
+  margin-bottom: 10px;
+}
+
+.precio {
+  font-size: 20px;
+  color: #d92a0b;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.presentaciones {
+  display: flex;
+  justify-self: left;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  background-color: #fff500;
+  color: #d92a0b;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 14px;
+  border: 2px solid #1e30c9;
+  transition: transform 0.2s;
+  
+}
+
+.circle:hover {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #091316;
+  color: #fff;
+  font-size: 13px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #d92a0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.circle-wrapper {
+  position: relative;
+}
+
+.descripcion {
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.boton-comprar {
+  background-color: #1e30c9;
+  color: #fff500;
+  padding: 12px 1%;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid #d92a0b;
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.boton-comprar:hover {
+  background-color: #ffb638;
+  color: #fff;
+   transition: transform 0.3s, background-color 0.3s;
+    transform: scale(1.05);
+}
+
+.presentaciones {
+  display: flex;
+  gap: 4px; /* menos espacio entre círculos */
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  background-color: #faf8ab; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  align-self: baseline;
+}
+.circlecolor {
+  width: 32px;
+  height: 32px;
+  background-color: #faf8ab; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorch1 {
+  width: 32px;
+  height: 32px;
+  background-color: #00b3ff; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorch2 {
+  width: 32px;
+  height: 32px;
+  background-color: #eace45; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorch3 {
+  width: 32px;
+  height: 32px;
+  background-color: #9c0ada; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorm1 {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorm2 {
+  width: 32px;
+  height: 32px;
+  background-color: #00b3ff; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorm3 {
+  width: 32px;
+  height: 32px;
+  background-color: #ff0000; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorG1 {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorG2 {
+  width: 32px;
+  height: 32px;
+  background-color: #00b3ff; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.colorG3 {
+  width: 32px;
+  height: 32px;
+  background-color: #ff0000; /* Amarillo */
+  color: #d92a0b; /* Rojo */
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #c91e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+/* Círculo +3 encima del último */
+.overlay {
+  position: absolute;
+  right: calc(40% - 36px); /* se ajusta la posición desde el centro */
+  transform: translateX(50%);
+  z-index: 2;
+  background-color: #d7d594; /* azul oscuro o puedes usar el que prefieras */
+  color: #000000;
+  font-size: 13px;
+  width: 30px;
+  height: 30px;
+  top: 0;
+}
+header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      height: 110px;
+      padding: 0 20px;
+      background-color: var(--azul-oscuro);
+      border-radius: 10px;
+      text-align: center;
+         margin-top: -20px;
+    }
+
+    header img.logo {
+      height: 100px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .titulo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .titulo h1 {
+      font-size: 1rem;
+      color: var(--amarillo);
+      text-shadow: 2px 2px var(--rojo);
+    }
+
+    .titulo p {
+      font-size: 0.85rem;
+      color: var(--amarillo);
+      text-shadow: 2px 2px #d92a0b;
+    }
+ .redes {
+      margin-top: 4px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .redes a {
+      background-color: var(--amarillo);
+      color: var(--negro);
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.75rem;
+      box-shadow: 2px 2px var(--rojo);
+       transition: transform 0.3s, background-color 0.3s;
+    
+    }
+.redes2{
+   margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+  
+}
+
+   
+.redes2 a {
+      background-color: var(--amarillo);
+      color: var(--negro);
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.75rem;
+      box-shadow: 2px 2px var(--rojo);
+       transition: transform 0.3s, background-color 0.3s;
+    
+    }
+    .redes img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .redes a:hover {
+      background-color: #ffcc00;
+      color: var(--blanco);
+      transform: scale(1.1);
+    }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .producto {
+      background: var(--azul-oscuro);
+      border: 2px solid var(--celeste);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border-color: var(--azul-oscuro);
+    }
+
+    .producto img {
+      max-width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .producto h3 {
+      margin: 10px 0;
+      font-size: 1.2em;
+      color: var(--amarillo);
+      text-shadow: 2px 2px var(--rojo);
+    }
+
+    .precio {
+      color: var(--amarillo);
+      text-shadow: 2px 2px var(--rojo);
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      background: var(--amarillo);
+      color: var(--negro);
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+
+    .whatsapp:hover {
+      background: var(--celeste);
+      color: var(--blanco);
+       transform: scale(1.1);
+       
+       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+.menu {
+  background-color: var(--amarillo);
+ padding: -10px 25px;      
+  font-size: 1rem; 
+  margin-left: -2px;
+  border-radius: 8px;
+  height: 20px;
+       margin-top: 10px;
+        box-shadow: 0px 1px 2px 2px var(--rojo);
+}
+.menu a {
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.menu li a {
+  color: var(--negro);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+  background-color: var(--celeste);
+  color: var(--blanco);
+}
+.Discl{
+color: var(--rojo);
+}
+.pasos{
+  font-weight: bold;
+color: #de0000;
+font-size: 30px;
+}
+
+    @media (max-width: 768px)  {
+      header {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    height: 80px; /* Permite que el header se ajuste dinámicamente */
+    padding: 10px; /* Ajusta el espacio interno */
+    padding-top: 25px;
+    margin-top: -20px;
+  }
+  .redes2{
+   margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+  
+}
+
+   
+.redes2 a {
+      background-color: var(--amarillo);
+      color: var(--negro);
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.5rem;
+      box-shadow: 2px 2px var(--rojo);
+       transition: transform 0.3s, background-color 0.3s;
+    
+    }
+.imagen-principal{
+
+
+  height: 250px;
+}
+  header img.logo {
+    height: 50px; 
+    padding: 0 0 -10px 0;
+    margin-top: -35px;
+    margin-bottom: -20px;
+
+  }
+      .titulo h1 {
+        margin-top: -20px;
+        font-size: 0.7rem;
+          text-shadow:  .5px .5px var(--rojo);
+      }
+
+      .titulo p {
+        font-size: 0.6rem;
+          text-shadow: .5px .5px var(--rojo);
+      }
+
+      .producto img {
+        height: 180px;
+      }
+      .producto-detalles{
+        margin-top: -25px;
+      }
+      .descripcion{
+        margin-top: -10px;
+      }
+      .precio{
+        margin-top: -15px;
+      }
+      .redes a{
+        margin-top: -3px;
+        height: 15px;
+        font-size: 0.50rem;
+       padding-top:2px;
+       margin-bottom: -5px;
+      }
+      .redes img {
+      width: auto;
+      height: 10px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+      .producto img {
+        height: 220px;
+      }
+
+      .whatsapp {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+      .menu{
+        margin-top: 15px;
+        box-shadow: 0px 1px 2px 2px var(--rojo);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .producto img {
+        height: 260px;
+      }
+
+      .producto h3 {
+        font-size: 1em;
+      }
+
+      .precio {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    
+    <img src="logo.png" alt="Logo Grupo Ecoresistol" class="logo">
+    <div class="titulo">
+      <h1>Grupo Ecoresistol - Catálogo de Productos</h1>
+      <p>Productos escolares y de temporada al mayoreo</p>
+      <nav class="redes">
+  <a href="https://www.facebook.com/grupo.ecoresistol" target="_blank">
+    <img src="Facebook_Logo.png" alt="Facebook"> Facebook
+  </a>
+  <a href="https://www.instagram.com/ecoresis_/?utm_source=ig_web_button_share_sheet" target="_blank">
+    <img src="Instagram_icon.png" alt="Instagram"> Instagram
+  </a>
+  <a href="https://wa.me/5622048379?text=Hola%20me%20gustaria%20mas%20informacion" target="_blank">
+    <img src="WhatsApp_Logo.png" alt="WhatsApp"> WhatsApp
+  </a>
+</nav><nav class="redes2">
+  <a href="index.html">Inicio</a>
+       <a href="15septiembre.html">Regresar al Catálogo</a>
+  
+  
+</nav>
+    </div>
+    
+  </header>
+<div class="producto-page">
+   <div class="producto-imagenes">
+      <!-- Imagen principal que cambiará dinámicamente -->
+      <img src="CatalogoSeptiembre/Carrillera.png" class="imagen-principal" id="imagen-principal" alt="Producto">
+    </div>
+
+  <div class="producto-detalles">
+    <h1 id="titulo-producto">Carrillera</h1>
+    <p class="descripcion" id="descripcion-producto">
+        Carrillera empaque con 50 piezas.
+      </p>
+    
+
+    <a href="https://wa.me/5622048379?text=Hola,%20me%20interesa%20el%20producto%20Carrillera" class="boton-comprar" id="boton-comprar">Pedir por WhatsApp</a>
+     <p class="Discl">Los pedidos se hacen a través de whattsapp</p>
+  </div>
+</div>
+ 
+</body>
+</html>
